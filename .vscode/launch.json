@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "启动前端 (Chrome)",
+            "url": "http://localhost:5173",
+            "webRoot": "${workspaceFolder}/frontend"
+        },
+        {
+            "name": "启动后端 (FastAPI)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/backend/main.py",
+            "cwd": "${workspaceFolder}/backend",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "启动前端 (Node/npm)",
+            "runtimeExecutable": "D:\\Program Files\\nodejs\\npm.cmd",
+            "env": {
+                "PATH": "${env:PATH};D:\\Program Files\\nodejs"
+            },
+            "runtimeArgs": [
+                "run",
+                "dev"
+            ],
+            "cwd": "${workspaceFolder}/frontend",
+            "console": "integratedTerminal"
+        }
+    ]
+}

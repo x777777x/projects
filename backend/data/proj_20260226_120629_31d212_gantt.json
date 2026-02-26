@@ -1,0 +1,139 @@
+{
+  "project_id": "proj_20260226_120629_31d212",
+  "project_name": "测试项目4",
+  "tasks": [
+    {
+      "id": "task_1",
+      "name": "调研问卷设计xxxxxxxxxxxxxxxx",
+      "milestone": "项目启动",
+      "parent_task": "需求调研需求调研需求调研",
+      "start": "2026-01-19 00:00:00",
+      "end": "2026-01-21 00:00:00",
+      "progress": 100.0,
+      "status": "已完成",
+      "departments": [
+        "产品部"
+      ]
+    },
+    {
+      "id": "task_2",
+      "name": "问卷发放与收集xxxxxxxxxxxxxx",
+      "milestone": "项目启动",
+      "parent_task": "需求调研需求调研需求调研",
+      "start": "2026-01-21 00:00:00",
+      "end": "2026-01-24 00:00:00",
+      "progress": 100.0,
+      "status": "已完成",
+      "departments": [
+        "产品部"
+      ]
+    },
+    {
+      "id": "task_3",
+      "name": "首页设计xxxxxxxxxxxxxxxxxxxx",
+      "milestone": "设计阶段",
+      "parent_task": "UI设计",
+      "start": "2026-01-24 00:00:00",
+      "end": "2026-01-28 00:00:00",
+      "progress": 100.0,
+      "status": "已完成",
+      "departments": [
+        "设计部"
+      ]
+    },
+    {
+      "id": "task_4",
+      "name": "导航设计xxxxxxxxxxxxxxxxxxxx",
+      "milestone": "设计阶段",
+      "parent_task": "UI设计",
+      "start": "2026-01-28 00:00:00",
+      "end": "2026-02-02 00:00:00",
+      "progress": 100.0,
+      "status": "已完成",
+      "departments": [
+        "设计部"
+      ]
+    },
+    {
+      "id": "task_5",
+      "name": "功能设计xxxxxxxxxxxxxxxxxxxx",
+      "milestone": "设计阶段",
+      "parent_task": "UI设计",
+      "start": "2026-02-02 00:00:00",
+      "end": "2026-02-08 00:00:00",
+      "progress": 100.0,
+      "status": "已完成",
+      "departments": [
+        "设计部"
+      ]
+    },
+    {
+      "id": "task_6",
+      "name": "后端开发xxxxxxxxxxxxxxxxxxxx",
+      "milestone": "研发测试",
+      "parent_task": "功能开发",
+      "start": "2026-02-08 00:00:00",
+      "end": "2026-03-30 00:00:00",
+      "progress": 50.0,
+      "status": "进行中",
+      "departments": [
+        "研发部"
+      ]
+    },
+    {
+      "id": "task_7",
+      "name": "前端开发xxxxxxxxxxxxxxxxxxxx",
+      "milestone": "研发测试",
+      "parent_task": "功能开发",
+      "start": "2026-02-08 00:00:00",
+      "end": "2026-05-09 00:00:00",
+      "progress": 100.0,
+      "status": "已完成",
+      "departments": [
+        "研发部"
+      ]
+    },
+    {
+      "id": "task_8",
+      "name": "单元测试xxxxxxxxxxxxxxxxxxxx",
+      "milestone": "研发测试",
+      "parent_task": "测试",
+      "start": "2026-05-09 00:00:00",
+      "end": "2026-05-24 00:00:00",
+      "progress": 0.0,
+      "status": "未开始",
+      "departments": [
+        "研发部",
+        "测试部"
+      ]
+    },
+    {
+      "id": "task_9",
+      "name": "功能测试xxxxxxxxxxxxxxxxxxxx",
+      "milestone": "研发测试",
+      "parent_task": "测试",
+      "start": "2026-05-24 00:00:00",
+      "end": "2026-06-08 00:00:00",
+      "progress": 0.0,
+      "status": "未开始",
+      "departments": [
+        "研发部",
+        "测试部"
+      ]
+    },
+    {
+      "id": "task_10",
+      "name": "上线xxxxxxxxxxxxxxxxxxxxxxxx",
+      "milestone": "投产运行",
+      "parent_task": "部署验证",
+      "start": "2026-06-08 00:00:00",
+      "end": "2026-06-18 00:00:00",
+      "progress": 0.0,
+      "status": "未开始",
+      "departments": [
+        "研发部",
+        "运维部"
+      ]
+    }
+  ]
+}

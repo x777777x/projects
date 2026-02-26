@@ -1,0 +1,48 @@
+{
+  "projects": [
+    {
+      "project_id": "proj_20260226_120629_31d212",
+      "project_name": "测试项目4",
+      "upload_time": "2026-02-26 12:06:29",
+      "display_name": "项目模板4.xls",
+      "task_count": 10,
+      "overall_progress": 59.375,
+      "warning_count": 0,
+      "start_date": "2026-01-19 00:00:00",
+      "end_date": "2026-06-18 00:00:00"
+    },
+    {
+      "project_id": "proj_20260225_184308_17e534",
+      "project_name": "测试项目3",
+      "upload_time": "2026-02-25 18:43:08",
+      "display_name": "项目模板3.xls",
+      "task_count": 10,
+      "overall_progress": 53.125,
+      "warning_count": 0,
+      "start_date": "2026-01-19 00:00:00",
+      "end_date": "2026-06-18 00:00:00"
+    },
+    {
+      "project_id": "proj_20260225_174744_493699",
+      "project_name": "测试项目1",
+      "upload_time": "2026-02-25 17:47:44",
+      "display_name": "项目模板1.xls",
+      "task_count": 10,
+      "overall_progress": 53.125,
+      "warning_count": 0,
+      "start_date": "2026-01-01",
+      "end_date": "2026-04-16"
+    },
+    {
+      "project_id": "proj_20260225_173907_ec6269",
+      "project_name": "测试项目2",
+      "upload_time": "2026-02-25 17:39:07",
+      "display_name": "项目模板2.xls",
+      "task_count": 10,
+      "overall_progress": 53.125,
+      "warning_count": 0,
+      "start_date": "2026-02-01 00:00:00",
+      "end_date": "2026-08-20 00:00:00"
+    }
+  ]
+}

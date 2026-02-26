@@ -1,0 +1,214 @@
+{
+  "project_id": "proj_20260225_111304_fe6706",
+  "project_name": "测试项目1",
+  "upload_time": "2026-02-25 11:13:04",
+  "statistics": {
+    "total_tasks": 10,
+    "completed_tasks": 6,
+    "overdue_tasks": 0,
+    "in_progress_tasks": 1,
+    "overall_progress": 59.375
+  },
+  "milestones": [
+    {
+      "name": "项目启动",
+      "start_date": "2026/01/01",
+      "end_date": "2026/01/06",
+      "progress": 100.0,
+      "tasks_level1": [
+        {
+          "name": "需求调研",
+          "start_date": "2026/01/01",
+          "end_date": "2026/01/06",
+          "progress": 100.0,
+          "status": "已完成",
+          "departments": [],
+          "remarks": "",
+          "tasks_level2": [
+            {
+              "name": "调研问卷设计",
+              "start_date": "2026/01/01",
+              "end_date": "2026/01/03",
+              "progress": 100.0,
+              "status": "已完成",
+              "departments": [
+                "产品部"
+              ],
+              "remarks": ""
+            },
+            {
+              "name": "问卷发放与收集",
+              "start_date": "2026/01/03",
+              "end_date": "2026/01/06",
+              "progress": 100.0,
+              "status": "已完成",
+              "departments": [
+                "产品部"
+              ],
+              "remarks": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "设计阶段",
+      "start_date": "2026/01/06",
+      "end_date": "2026/01/21",
+      "progress": 100.0,
+      "tasks_level1": [
+        {
+          "name": "UI设计",
+          "start_date": "2026/01/06",
+          "end_date": "2026/01/21",
+          "progress": 100.0,
+          "status": "已完成",
+          "departments": [],
+          "remarks": "",
+          "tasks_level2": [
+            {
+              "name": "首页设计",
+              "start_date": "2026/01/06",
+              "end_date": "2026/01/10",
+              "progress": 100.0,
+              "status": "已完成",
+              "departments": [
+                "设计部"
+              ],
+              "remarks": ""
+            },
+            {
+              "name": "导航设计",
+              "start_date": "2026/01/10",
+              "end_date": "2026/01/15",
+              "progress": 100.0,
+              "status": "已完成",
+              "departments": [
+                "设计部"
+              ],
+              "remarks": ""
+            },
+            {
+              "name": "功能设计",
+              "start_date": "2026/01/15",
+              "end_date": "2026/01/21",
+              "progress": 100.0,
+              "status": "已完成",
+              "departments": [
+                "设计部"
+              ],
+              "remarks": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "研发测试",
+      "start_date": "2026/01/21",
+      "end_date": "2026/04/06",
+      "progress": 37.5,
+      "tasks_level1": [
+        {
+          "name": "功能开发",
+          "start_date": "2026/01/21",
+          "end_date": "2026/03/12",
+          "progress": 75.0,
+          "status": "进行中",
+          "departments": [],
+          "remarks": "",
+          "tasks_level2": [
+            {
+              "name": "后端开发",
+              "start_date": "2026/01/21",
+              "end_date": "2026/02/10",
+              "progress": 100.0,
+              "status": "已完成",
+              "departments": [
+                "研发部"
+              ],
+              "remarks": ""
+            },
+            {
+              "name": "前端开发",
+              "start_date": "2026/02/10",
+              "end_date": "2026/03/12",
+              "progress": 50.0,
+              "status": "进行中",
+              "departments": [
+                "研发部"
+              ],
+              "remarks": ""
+            }
+          ]
+        },
+        {
+          "name": "测试",
+          "start_date": "2026/03/12",
+          "end_date": "2026/04/06",
+          "progress": 0.0,
+          "status": "未开始",
+          "departments": [],
+          "remarks": "",
+          "tasks_level2": [
+            {
+              "name": "单元测试",
+              "start_date": "2026/03/12",
+              "end_date": "2026/03/22",
+              "progress": 0.0,
+              "status": "未开始",
+              "departments": [
+                "研发部",
+                "测试部"
+              ],
+              "remarks": ""
+            },
+            {
+              "name": "功能测试",
+              "start_date": "2026/03/22",
+              "end_date": "2026/04/06",
+              "progress": 0.0,
+              "status": "未开始",
+              "departments": [
+                "研发部",
+                "测试部"
+              ],
+              "remarks": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "投产运行",
+      "start_date": "2026/04/06",
+      "end_date": "2026/04/16",
+      "progress": 0.0,
+      "tasks_level1": [
+        {
+          "name": "部署验证",
+          "start_date": "2026/04/06",
+          "end_date": "2026/04/16",
+          "progress": 0.0,
+          "status": "未开始",
+          "departments": [],
+          "remarks": "",
+          "tasks_level2": [
+            {
+              "name": "上线",
+              "start_date": "2026/04/06",
+              "end_date": "2026/04/16",
+              "progress": 0.0,
+              "status": "未开始",
+              "departments": [
+                "研发部",
+                "运维部"
+              ],
+              "remarks": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
