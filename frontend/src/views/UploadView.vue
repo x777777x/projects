@@ -1,5 +1,5 @@
 <template>
-  <div class="upload-container">
+  <div class="upload-container" style="width: 60%;">
     <el-card class="box-card">
       <template #header>
         <div class="card-header">
@@ -22,7 +22,8 @@
         </div>
         <template #tip>
           <div class="el-upload__tip">
-            只能上传 xlsx/xls 文件，且不超过 50MB。请确保文件格式符合规范。
+            只能上传 xlsx/xls 文件，且不超过 50MB。请确保文件格式符合规范。<br>
+            项目名称不能重复，如需要更新项目信息，可以从项目列表下载原文件进行修改，在删除原文件后重新上传。<br>
           </div>
         </template>
       </el-upload>

@@ -5,7 +5,7 @@
         <div class="card-header">
           <div class="header-left">
             <el-button @click="$router.push('/files')" icon="Back">返回列表</el-button>
-            <span class="project-title">全局项目进度大屏</span>
+            <span class="project-title">全部项目进度大屏</span>
           </div>
           <div class="header-right">
             <el-radio-group v-model="ganttScale" size="small" @change="changeGanttScale">
