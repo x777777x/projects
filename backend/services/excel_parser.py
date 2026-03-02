@@ -67,6 +67,11 @@ def parse_excel(file_path: str, original_filename: str) -> Tuple[bool, List[str]
     if pd.isna(project_name) or not project_name:
         errors.append("文件格式错误：第一行第一列应为项目名称。")
 
+    # 检查项目名称是否重复
+    projects = file_manager.get_all_projects()
+    if any(p.get("project_name") == project_name for p in projects):
+        errors.append(f"项目名称 '{project_name}' 已存在，请勿重复上传相同项目。")
+
     headers = df.iloc[1].fillna("").astype(str).str.strip().tolist()
     
     # 截取有效列

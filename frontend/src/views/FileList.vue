@@ -60,7 +60,7 @@
     </el-card>
 
     <!-- 下载模板提示弹窗 -->
-    <el-dialog v-model="showTemplateDialog" title="模板下载与填写指南" width="600px">
+    <el-dialog v-model="showTemplateDialog" title="模板下载与填写指南" width="60%">
       <div class="template-instructions">
         <h3>项目信息表填写要求：</h3>
         <ol>
@@ -68,7 +68,7 @@
           <li><strong>表头规范：</strong>第二行为列头，必须严格按照以下顺序和名称：编号、里程碑、一级任务、二级任务、责任部门、工期、开始时间、结束时间、状态、备注。</li>
           <li><strong>编号要求：</strong>第一列编号序号必须连续、无重复、无遗漏。</li>
           <li><strong>状态规范：</strong>状态列中的值只能是“未开始”、“进行中”或“已完成”。</li>
-          <li><strong>时间格式：</strong>开始时间和结束时间需使用“YYYY-MM-DD”或“YYYY-MM-DD HH:MM:SS”的格式。</li>
+          <li><strong>时间格式：</strong>开始时间和结束时间需在“设置单元格格式”中设置为“日期”类型格式“2000-01-01”。</li>
           <li><strong>工期规范：</strong>工期必须为整型数字。</li>
         </ol>
         <p class="warning-text"><el-icon><Warning /></el-icon> 如果不符合以上任一要求，系统将在上传时校验失败并提示具体错误。</p>
@@ -79,13 +79,14 @@
     </el-dialog>
 
     <!-- 文件信息弹窗 -->
-    <el-dialog v-model="showFileInfoDialog" title="文件信息" width="400px">
+    <el-dialog v-model="showFileInfoDialog" title="文件信息" width="40%">
       <el-descriptions :column="1" border>
         <el-descriptions-item label="原始文件名">{{ currentFileInfo.display_name }}</el-descriptions-item>
         <el-descriptions-item label="上传时间">{{ currentFileInfo.upload_time }}</el-descriptions-item>
       </el-descriptions>
       <template #footer>
         <span class="dialog-footer">
+          <el-button type="success" @click="downloadOriginalFile(currentFileInfo.project_id)" :loading="downloading">下载原始文件</el-button>
           <el-button type="primary" @click="showFileInfoDialog = false">关闭</el-button>
         </span>
       </template>
@@ -117,7 +118,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { getFiles, deleteFile, verifyPassword } from '@/api'
+import { getFiles, deleteFile, verifyPassword, downloadOriginalFileApi } from '@/api'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Warning } from '@element-plus/icons-vue'
 
@@ -129,6 +130,7 @@ const showTemplateDialog = ref(false)
 // 文件信息弹窗相关
 const showFileInfoDialog = ref(false)
 const currentFileInfo = ref({})
+const downloading = ref(false)
 
 // 密码校验相关
 const showPwdDialog = ref(false)
@@ -169,10 +171,33 @@ const goToGantt = (row) => {
 
 const handleFileInfo = (row) => {
   currentFileInfo.value = {
+    project_id: row.project_id,
     display_name: row.display_name,
     upload_time: row.upload_time
   }
   showFileInfoDialog.value = true
+}
+
+const downloadOriginalFile = async (projectId) => {
+  if (!projectId) return
+  downloading.value = true
+  try {
+    const blob = await downloadOriginalFileApi(projectId)
+    const url = window.URL.createObjectURL(new Blob([blob]))
+    const link = document.createElement('a')
+    link.href = url
+    link.setAttribute('download', currentFileInfo.value.display_name || 'project_file.xlsx')
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    window.URL.revokeObjectURL(url)
+    ElMessage.success('下载成功')
+  } catch (error) {
+    console.error(error)
+    ElMessage.error('文件下载失败')
+  } finally {
+    downloading.value = false
+  }
 }
 
 const handleUploadClick = () => {

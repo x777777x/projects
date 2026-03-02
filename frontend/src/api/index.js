@@ -33,6 +33,14 @@ export const deleteFile = (projectId) => {
     })
 }
 
+export const downloadOriginalFileApi = (projectId) => {
+    return request({
+        url: `/files/download/${projectId}`,
+        method: 'get',
+        responseType: 'blob'
+    })
+}
+
 export const getProjectDetail = (projectId) => {
     return request({
         url: `/projects/${projectId}/detail`,
