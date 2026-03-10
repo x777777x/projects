@@ -221,7 +221,9 @@ class FileManager:
                         "remark": t_remark,
                         "parent": p["project_id"],
                         "progress": t["progress"], # progress 实际上没有用在动态图计算了
-                        "type": "task"
+                        "type": "task",
+                        "milestone": t.get("milestone", ""),
+                        "level1": t.get("parent_task", "")
                     })
             
             proj_data["children"] = children

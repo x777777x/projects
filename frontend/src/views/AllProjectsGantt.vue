@@ -21,6 +21,7 @@
       <div class="filter-bar">
         <div class="filter-controls">
           <el-input v-model="filters.keyword" placeholder="搜索项目名称..." style="width: 250px" clearable @input="applyFilters" />
+          <el-checkbox v-model="showDetailedCols" @change="updateColumns" style="margin-left: 20px;">显示里程碑及一级任务</el-checkbox>
         </div>
         <div class="color-legend">
           <span class="legend-item"><span class="color-dot" style="background: #67c23a;"></span>已完成</span>
@@ -56,6 +57,8 @@ const filters = reactive({
   keyword: ''
 })
 
+const showDetailedCols = ref(false)
+
 const changeGanttScale = (val) => {
   if (val === 'day') {
     gantt.config.scale_unit = 'day';
@@ -79,13 +82,21 @@ const applyFilters = () => {
 
 // dhtmlx 初始化
 const updateColumns = () => {
-  gantt.config.columns = [
+  const baseCols = [];
+  if (showDetailedCols.value) {
+    baseCols.push({ name: "milestone", label: "里程碑", align: "center", width: 100 });
+    baseCols.push({ name: "level1", label: "一级任务", align: "center", width: 100 });
+  }
+  
+  baseCols.push(
     { name: "text", label: "项目名称", width: 280, tree: true, template: obj => `<strong>${obj.text}</strong>` },
     { name: "start_date", label: "开始", align: "center", width: 90 },
     { name: "end_date", label: "结束", align: "center", width: 90 },
-    { name: "task_count", label: "任务总数", align: "center", width: 80, template: obj => obj.task_count },
+    { name: "task_count", label: "任务总数", align: "center", width: 80, template: obj => obj.task_count || '' },
     { name: "status", label: "状态", align: "center", width: 70 }
-  ];
+  );
+  
+  gantt.config.columns = baseCols;
   gantt.render();
 }
 
@@ -135,10 +146,14 @@ const initGantt = () => {
 
   // 自定义 浮窗(Tooltip) 的内容
   gantt.templates.tooltip_text = function(start, end, task) {
-	  const st = start ? gantt.date.date_to_str("%Y-%m-%d")(start) : "-";
-	  const et = end ? gantt.date.date_to_str("%Y-%m-%d")(end) : "-";
+      const st = start ? gantt.date.date_to_str("%Y-%m-%d")(start) : "-";
+      const et = end ? gantt.date.date_to_str("%Y-%m-%d")(end) : "-";
       const rm = task.remark ? task.remark : "无";
-      return `<b>项目/任务：</b> ${task.text}<br/>` +
+      const ms = task.milestone ? `<b>里程碑：</b> ${task.milestone}<br/>` : "";
+      const l1 = task.level1 ? `<b>一级任务：</b> ${task.level1}<br/>` : "";
+      
+      return ms + l1 +
+             `<b>二级任务：</b> ${task.text}<br/>` +
              `<b>状态：</b> ${task.status}<br/>` +
              `<b>开始时间：</b> ${st}<br/>` +
              `<b>结束时间：</b> ${et}<br/>` +
@@ -256,7 +271,9 @@ const loadGanttData = async () => {
                   parent: p.id,
                   type: "task",
                   start_date_raw: t.start_date,
-                  end_date_raw: t.end_date
+                  end_date_raw: t.end_date,
+                  milestone: t.milestone || '',
+                  level1: t.level1 || ''
               }
           })
         }
